@@ -18,6 +18,11 @@ pipeline {
                 sh 'mvn package'
             }
         }
+        stage('Run Test') {
+            steps {
+                sh 'java Test'
+            }
+        }
     }
 
     post {
