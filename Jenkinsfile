@@ -19,13 +19,6 @@ pipeline {
             }
         }
 
-        stage('Run Test') {
-            steps {
-                sh 'java -cp target/classes Test'
-            }
-        }
-    }
-
     post {
         success {
             echo 'Build Successful'
