@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven'      // Maven name configured in Jenkins Global Tool Configuration         // JDK configured in Jenkins
+        maven 'Maven'
+        jdk 'Java'
     }
 
     stages {
@@ -18,9 +19,10 @@ pipeline {
                 sh 'mvn package'
             }
         }
+
         stage('Run Test') {
             steps {
-                sh 'java Test'
+                sh 'java -cp target/classes Test'
             }
         }
     }
